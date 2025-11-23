@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Casa Fuego{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="{% url 'index' %}">casa fuego</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="{% url 'menu' %}">Menu</a>
+            <a href="{% url 'booking' %}">Book</a>
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'my_bookings' %}">My Bookings</a>
+                <a href="{% url 'account_logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'account_login' %}">Login</a>
+            {% endif %}
+        </div>
+    </nav>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    <h4>Find Us</h4>
+    <p>2 Central Plaza, Temple Bar, Dublin, D02 TOX4</p>
+    <p>Tel: +353 1 234 5678</p>
+    <p>Opening Hours:</p>
+    <p>Mon-Fri: 16:00 - 21:00, Sat-Sun: 13:00 - 22:00</p>
+</footer>
+
+<script src="{% static 'scripts/script.js' %}"></script>
+
+</body>
+</html>

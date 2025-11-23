@@ -1,0 +1,21 @@
+{% extends "bookings/base.html" %}
+
+{% block title %}Sign Up | Casa Fuego{% endblock %}
+
+{% block content %}
+<section class="booking-section" style="padding: 80px; text-align:center; color:#e8dad3;">
+    <h2 class="booking-cta">Create Account</h2>
+
+    <form method="POST" class="booking-form" style="max-width:300px; margin:0 auto;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn" type="submit">Sign Up</button>
+    </form>
+
+    <p style="margin-top:30px;">
+        Already have an account?
+        <a href="{% url 'account_login' %}" style="color:#e03616;">Log in here</a>
+    </p>
+</section>
+{% endblock %}
+
