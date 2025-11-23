@@ -12,24 +12,45 @@
 <body>
 
 <header>
-    <nav class="navbar">
-        <div class="logo">
-            <a href="{% url 'index' %}">casa fuego</a>
-        </div>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="{% url 'index' %}">casa fuego</a>
+    </div>
 
-        <div class="nav-links">
-            <a href="{% url 'menu' %}">Menu</a>
-            <a href="{% url 'booking' %}">Book</a>
+    <div class="nav-links">
+      <a href="{% url 'menu' %}">Menu</a>
+      <a href="{% url 'booking' %}">Book</a>
 
-            {% if user.is_authenticated %}
-                <a href="{% url 'my_bookings' %}">My Bookings</a>
-                <a href="{% url 'account_logout' %}">Logout</a>
-            {% else %}
-                <a href="{% url 'account_login' %}">Login</a>
-            {% endif %}
-        </div>
-    </nav>
+      {% if user.is_authenticated %}
+        <a href="{% url 'my_bookings' %}">My Bookings</a>
+        <a href="{% url 'account_logout' %}">Logout</a>
+      {% else %}
+        <a href="{% url 'account_login' %}">Login</a>
+        <a href="{% url 'account_signup' %}">Sign Up</a>
+      {% endif %}
+    </div>
+
+    <div class="menu-toggle">&#9776;</div>
+  </nav>
 </header>
+
+<!-- Side panel for mobile -->
+<div class="side-panel">
+    <span class="close-btn">&times;</span>
+  
+    <a href="{% url 'menu' %}">Menu</a>
+    <a href="{% url 'booking' %}">Book</a>
+  
+    {% if user.is_authenticated %}
+      <a href="{% url 'my_bookings' %}">My Bookings</a>
+      <a href="{% url 'account_logout' %}">Logout</a>
+    {% else %}
+      <a href="{% url 'account_login' %}">Login</a>
+      <a href="{% url 'account_signup' %}">Sign Up</a>
+    {% endif %}
+  </div>
+  
+  <div class="overlay"></div>
 
 <main>
     {% block content %}{% endblock %}
@@ -43,6 +64,10 @@
     <p>Mon-Fri: 16:00 - 21:00, Sat-Sun: 13:00 - 22:00</p>
 </footer>
 
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- JS file -->
 <script src="{% static 'scripts/script.js' %}"></script>
 
 </body>

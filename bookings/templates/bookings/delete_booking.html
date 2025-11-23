@@ -1,25 +1,27 @@
 {% extends "bookings/base.html" %}
-
-{% block title %}Cancel Booking | Casa Fuego{% endblock %}
+{% load static %}
 
 {% block content %}
-<section class="auth-container">
 
-    <h2 class="booking-cta">Cancel Booking</h2>
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 
-    <p style="margin-bottom: 25px;">
-        Are you sure you want to cancel your booking for <br>
-        <strong>{{ booking.date }}</strong> at <strong>{{ booking.time }}</strong>?
+<div class="delete-container">
+    <h2 class="delete-title">Cancel Booking</h2>
+
+    <p class="delete-text">
+        Are you sure you want to cancel your booking for<br>
+        <strong>{{ booking.date }} at {{ booking.time }}</strong>?
     </p>
 
     <form method="POST">
         {% csrf_token %}
-        <button type="submit" class="btn" style="background:#333;">Yes, Cancel</button>
+        <button type="submit" class="btn-delete-confirm">Yes, Cancel</button>
     </form>
 
-    <p class="auth-extra-text">
-        <a href="{% url 'my_bookings' %}">Go Back</a>
-    </p>
+    <a href="{% url 'my_bookings' %}" class="btn-delete-back">Go Back</a>
+</div>
 
-</section>
 {% endblock %}

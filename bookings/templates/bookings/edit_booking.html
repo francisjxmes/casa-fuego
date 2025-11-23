@@ -4,6 +4,11 @@
 
 {% block content %}
 
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
 <section class="auth-container">
 
     <h2 class="booking-cta">Edit Booking</h2>
@@ -19,9 +24,9 @@
         <button type="submit" class="btn">Save Changes</button>
     </form>
 
-    <p class="auth-extra-text">
-        <a href="{% url 'my_bookings' %}">Back to My Bookings</a>
-    </p>
+   
+    <a href="{% url 'my_bookings' %}" class="btn-back">Back to My Bookings</a>
+    
 
 </section>
 
