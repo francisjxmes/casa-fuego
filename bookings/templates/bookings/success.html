@@ -1,9 +1,14 @@
-{% extends "bookings/index.html" %}
+{% extends "bookings/base.html" %}
+
+     <!-- Google Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 
 {% block content %}
 <div style="padding: 80px; text-align: center; color: #e8dad3;">
     <h1>Booking Confirmed 🎉</h1>
     <p>Your table has been successfully booked.</p>
-    <a href="{% url 'index' %}" class="btn">Return Home</a>
+    <a href="{% url 'index' %}" class="btn-back">Return Home</a>
 </div>
 {% endblock %}
