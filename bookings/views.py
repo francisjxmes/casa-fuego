@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import BookingForm
 from .models import Booking
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     return render(request, "bookings/index.html")
@@ -40,4 +41,8 @@ def booking(request):
 def booking_success(request):
     return render(request, "bookings/success.html")
 
+@login_required
+def my_bookings(request):
+    bookings = Booking.objects.filter(user=request.user).order_by('-date', '-time')
+    return render(request, "bookings/my_bookings.html", {"bookings": bookings})
 
