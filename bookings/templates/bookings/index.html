@@ -23,10 +23,19 @@
   
         <!-- Desktop Links -->
         <div class="nav-links">
+
           <a href="{% url 'menu' %}">Menu</a>
           <a href="{% url 'booking' %}">Book</a>
-          <a href="{% url 'my_bookings' %}">My Bookings</a>
-        </div>
+      
+          {% if user.is_authenticated %}
+              <a href="{% url 'my_bookings' %}">My Bookings</a>
+              <a href="{% url 'account_logout' %}">Logout</a>
+          {% else %}
+              <a href="{% url 'account_login' %}">Login</a>
+              <a href="{% url 'account_signup' %}">Sign Up</a>
+          {% endif %}
+
+      </div>      
   
         <!-- Hamburger icon -->
         <div class="menu-toggle">&#9776;</div>
