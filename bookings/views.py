@@ -1,3 +1,4 @@
+from datetime import date
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import BookingForm
 from .models import Booking
@@ -16,19 +17,27 @@ def booking(request):
         if form.is_valid():
             # Check for double booking
             data = form.cleaned_data
-            existing = Booking.objects.filter(
+
+            if data['date'] < date.today():
+                return render(request, "bookings/booking.html", {
+                    "form": form,
+                    "error": "You cannot book a date in the past.",
+                })
+
+            conflict = Booking.objects.filter(
                 date=data['date'],
                 time=data['time']
             )
 
-            if existing.exists():
+            if conflict.exists():
                 return render(request, "bookings/booking.html", {
                     "form": form,
                     "error": "Sorry, that time is already booked!",
                 })
 
             booking = form.save(commit=False)
-            booking.user = request.user if request.user.is_authenticated else None
+            if request.user.is_authenticated:
+                booking.user = request.user
             booking.save()
 
             return redirect("booking_success")
