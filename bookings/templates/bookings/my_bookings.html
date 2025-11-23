@@ -12,16 +12,15 @@
 </head>
 <body>
 
-<header>
-    <nav class="navbar">
-        
-        <div class="logo">
-          <a href="{% url 'index' %}">casa fuego</a>
-        </div>
-
-        <!-- Desktop Links -->
-        <div class="nav-links">
-
+    <header>
+        <nav class="navbar">
+          <div class="logo">
+            <a href="{% url 'index' %}">casa fuego</a>
+          </div>
+    
+          <!-- Desktop Links -->
+          <div class="nav-links">
+  
             <a href="{% url 'menu' %}">Menu</a>
             <a href="{% url 'booking' %}">Book</a>
         
@@ -54,16 +53,9 @@
             <a href="{% url 'account_signup' %}">Sign Up</a>
         {% endif %}
       </div>
-
+  
       <!-- Overlay -->
-        <div class="overlay"></div>
-
-        <!-- <div class="nav-links">
-          <a href="{% url 'menu' %}">Menu</a>
-          <a href="{% url 'booking' %}">Book</a>
-        </div> -->
-    </nav>
-</header>
+      <div class="overlay"></div>
 
 <main style="padding: 60px; color: #e8dad3;">
 
@@ -71,9 +63,8 @@
         <h2 class="booking-cta" style="text-align:center;">My Bookings</h2>
 
     {% if bookings %}
-        <div style="margin-top:40px;">
         {% for b in bookings %}
-            <div style="padding:20px; border-bottom:1px solid #E03616;">
+            <div class="booking-entry">
                 <p><strong>Name:</strong> {{ b.name }}</p>
                 <p><strong>Party Size:</strong> {{ b.party_size }}</p>
                 <p><strong>Date:</strong> {{ b.date }}</p>
@@ -83,7 +74,7 @@
                 <a href="{% url 'delete_booking' b.id %}" class="btn-cancel" style="background:#333;">Cancel</a>
             </div>
         {% endfor %}
-        </div>
+    
     {% else %}
         <p style="text-align:center; margin-top:40px;">You have no bookings yet.</p>
     {% endif %}
@@ -91,12 +82,19 @@
 
 </main>
 
+<footer>
+    <h4>Find Us</h4>
+      <p>2 Central Plaza, Temple Bar, Dublin, D02 TOX4 </p>
+      <p>Tel: +353 1 234 5678</p>
+      <p>Opening Hours:</p>
+      <p>Mon-Fri: 16:00 - 21:00, Sat-Sun: 13:00 - 22:00</p>
+  </footer>
+
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <!-- Your navigation script -->
 <script src="{% static 'scripts/script.js' %}"></script>
-
 
 </body>
 </html>
