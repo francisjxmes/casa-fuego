@@ -11,9 +11,6 @@ body {
   background-attachment: fixed;
 }
 
-/* Signup/Login styles */
-background-color: black;
-
 header {
   position: sticky;
   top: 0;
@@ -86,13 +83,6 @@ header {
   color: #e8dad3;
 }
 
-/* .navbar .nav-links a {
-  margin-left: 20px;
-  color: #e8dad3;
-  text-decoration: none;
-  font-weight: bold;
-} */
-
 .navbar .nav-links a {
   background-color: #E03616;
   padding: 10px 25px;
@@ -108,7 +98,6 @@ header {
 .nav-links a:hover {
   opacity: 0.85;
 }
-
 
 /* Hamburger icon (hidden on desktop) */
 .menu-toggle {
@@ -174,8 +163,10 @@ header {
   max-width: 95vw;
 }
 
-.intro p {
+.intro h2 {
   font-family: 'Roboto';
+  font-size: 1.3rem;
+  line-height: 1.5rem;
   font-weight: 300;
 }
 
@@ -236,7 +227,7 @@ header {
 .booking-form .btn {
   border: none;
   padding-top: 15px;
-  font-family: 'Roboto Mono' monospace;
+  font-family: 'Roboto Mono', monospace;
   font-size: 16px;
 }
 

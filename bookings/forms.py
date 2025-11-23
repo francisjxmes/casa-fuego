@@ -6,6 +6,18 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ['name', 'party_size', 'date', 'time']
         widgets = {
-            'date': forms.DateInput(attrs={'type': 'date'}),
-            'time': forms.TimeInput(attrs={'type': 'time'}),
+            'name': forms.TextInput(attrs={
+                'autocomplete': 'name'
+            }),
+            'party_size': forms.NumberInput(attrs={
+                'autocomplete': 'off'
+            }),
+            'date': forms.DateInput(attrs={
+                'type': 'date',
+                'autocomplete': 'off'
+            }),
+            'time': forms.TimeInput(attrs={
+                'type': 'time',
+                'autocomplete': 'off'
+            }),
         }
