@@ -1,0 +1,9 @@
+{% extends "bookings/index.html" %}
+
+{% block content %}
+<div style="padding: 80px; text-align: center; color: #e8dad3;">
+    <h1>Booking Confirmed 🎉</h1>
+    <p>Your table has been successfully booked.</p>
+    <a href="{% url 'index' %}" class="btn">Return Home</a>
+</div>
+{% endblock %}
