@@ -1,0 +1,28 @@
+{% extends "bookings/base.html" %}
+
+{% block title %}Edit Booking | Casa Fuego{% endblock %}
+
+{% block content %}
+
+<section class="auth-container">
+
+    <h2 class="booking-cta">Edit Booking</h2>
+
+    <form method="POST" class="booking-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        {% if error %}
+            <p style="color: red; margin-top: 10px;">{{ error }}</p>
+        {% endif %}
+
+        <button type="submit" class="btn">Save Changes</button>
+    </form>
+
+    <p class="auth-extra-text">
+        <a href="{% url 'my_bookings' %}">Back to My Bookings</a>
+    </p>
+
+</section>
+
+{% endblock %}

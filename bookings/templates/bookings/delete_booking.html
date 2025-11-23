@@ -1,0 +1,25 @@
+{% extends "bookings/base.html" %}
+
+{% block title %}Cancel Booking | Casa Fuego{% endblock %}
+
+{% block content %}
+<section class="auth-container">
+
+    <h2 class="booking-cta">Cancel Booking</h2>
+
+    <p style="margin-bottom: 25px;">
+        Are you sure you want to cancel your booking for <br>
+        <strong>{{ booking.date }}</strong> at <strong>{{ booking.time }}</strong>?
+    </p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn" style="background:#333;">Yes, Cancel</button>
+    </form>
+
+    <p class="auth-extra-text">
+        <a href="{% url 'my_bookings' %}">Go Back</a>
+    </p>
+
+</section>
+{% endblock %}
