@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Fuego</title>
+    <link rel="stylesheet" href="style/style.css"/>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html">casa fuego</a>
+        </div>
+
+        <!-- Desktop Links -->
+        <div class="nav-links">
+          <a href="menu.html">Menu</a>
+          <a href="booking.html">Book</a>
+        </div>
+
+        <!-- Hamburger icon -->
+         <div class="menu-toggle">&#9776;</div>
+      </nav>
+    </header>
+
+    <!-- Nav menu for mobile -->
+    <div class="side-panel">
+      <span class="close-btn">&times;</span>
+      <a href="menu.html">Menu</a>
+      <a href="booking.html">Book</a>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <main>
+      <section class="booking-section">
+        <h2 class="booking-cta">Book a table</h2>
+        
+        <form class="booking-form" action="#" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name">
+          <label for="party-size">Party Size</label>
+          <select id="party-size" name="party-size">
+            <option value="" disabled selected>Select</option>
+            <option value="1">1 person</option>
+            <option value="2">2 people</option>
+            <option value="3">3 people</option>
+            <option value="4">4 people</option>
+            <option value="5">5 people</option>
+            <option value="6+">6 people</option>
+          </select>
+    
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date">
+    
+          <label for="time">Time</label>
+          <input type="time" id="time" name="time">
+    
+          <button type="submit" class="btn">Book Now</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <h4>Find Us</h4>
+      <p>2 Central Plaza, Temple Bar, Dublin, D02 TOX4 </p>
+      <p>Tel: +353 1 234 5678</p>
+      <p>Opening Hours:</p>
+      <p>Mon-Fri: 16:00 - 21:00, Sat-Sun: 13:00 - 22:00</p>
+    </footer>
+
+     <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- JS file -->
+    <script src="scripts/script.js"></script>
+
+  </body>
+</html>
