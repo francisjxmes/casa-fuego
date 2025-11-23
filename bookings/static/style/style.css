@@ -347,6 +347,56 @@ header {
   opacity: 0.9;
 }
 
+/* Container for My Bookings */
+.my-bookings-container {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+/* Each booking card */
+.booking-entry {
+  background-color: #111111;
+  border-radius: 25px;
+  padding: 25px;
+  margin-bottom: 30px;
+  text-align: left;
+  border: 1px solid #E03616;
+}
+
+/* Text inside the card */
+.booking-entry p {
+  margin: 5px 0;
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* Edit button */
+.btn-edit {
+  background-color: #E03616;
+  color: #e8dad3;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin-right: 10px;
+  display: inline-block;
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* Cancel button */
+.btn-cancel {
+  background-color: #333;
+  color: #e8dad3;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.btn-edit:hover,
+.btn-cancel:hover {
+  opacity: 0.9;
+}
+
 
 /* Menu styling */
 .menu-tabs {
@@ -489,6 +539,14 @@ footer h4 {
   font-family: 'Pirata One';
   font-size: 2rem;
 }
+
+input,
+select,
+textarea {
+    color: #1F1E1F !important;
+    background-color: #e8dad3;
+}
+
 
 /* Media queries for responsiveness */
 
