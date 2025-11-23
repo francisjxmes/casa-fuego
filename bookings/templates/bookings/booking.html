@@ -44,28 +44,17 @@
       <section class="booking-section">
         <h2 class="booking-cta">Book a table</h2>
         
-        <form class="booking-form" action="#" method="POST">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name">
-          <label for="party-size">Party Size</label>
-          <select id="party-size" name="party-size">
-            <option value="" disabled selected>Select</option>
-            <option value="1">1 person</option>
-            <option value="2">2 people</option>
-            <option value="3">3 people</option>
-            <option value="4">4 people</option>
-            <option value="5">5 people</option>
-            <option value="6+">6 people</option>
-          </select>
-    
-          <label for="date">Date</label>
-          <input type="date" id="date" name="date">
-    
-          <label for="time">Time</label>
-          <input type="time" id="time" name="time">
-    
+        <form class="booking-form" method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+      
+          {% if error %}
+              <p style="color: red;">{{ error }}</p>
+          {% endif %}
+      
           <button type="submit" class="btn">Book Now</button>
-        </form>
+      </form>
+      
       </section>
     </main>
     <footer>
