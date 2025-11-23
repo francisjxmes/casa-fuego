@@ -34,8 +34,7 @@
               <a href="{% url 'account_login' %}">Login</a>
               <a href="{% url 'account_signup' %}">Sign Up</a>
           {% endif %}
-
-      </div>      
+        </div>      
   
         <!-- Hamburger icon -->
         <div class="menu-toggle">&#9776;</div>
@@ -44,10 +43,18 @@
 
     <!-- Nav menu for mobile -->
     <div class="side-panel">
-      <span class="closedjan-btn">&times;</span>
+      <span class="close-btn">&times;</span>
+    
       <a href="{% url 'menu' %}">Menu</a>
       <a href="{% url 'booking' %}">Book</a>
-      <a href="{% url 'my_bookings' %}">My Bookings</a>
+    
+      {% if user.is_authenticated %}
+          <a href="{% url 'my_bookings' %}">My Bookings</a>
+          <a href="{% url 'account_logout' %}">Logout</a>
+      {% else %}
+          <a href="{% url 'account_login' %}">Login</a>
+          <a href="{% url 'account_signup' %}">Sign Up</a>
+      {% endif %}
     </div>
 
     <!-- Overlay -->

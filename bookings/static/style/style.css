@@ -86,12 +86,29 @@ header {
   color: #e8dad3;
 }
 
-.navbar .nav-links a {
+/* .navbar .nav-links a {
   margin-left: 20px;
   color: #e8dad3;
   text-decoration: none;
   font-weight: bold;
+} */
+
+.navbar .nav-links a {
+  background-color: #E03616;
+  padding: 10px 25px;
+  border-radius: 25px;
+  color: #e8dad3;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 10px;
+  cursor: pointer;
+  display: inline-block;
 }
+
+.nav-links a:hover {
+  opacity: 0.85;
+}
+
 
 /* Hamburger icon (hidden on desktop) */
 .menu-toggle {
@@ -110,7 +127,7 @@ header {
   height: 100%;
   background: #111;
   padding-top: 2rem;
-  transition: left 0.3s ease;
+  transition: right 0.3s ease;
   z-index: 1001;
 }
 
@@ -222,6 +239,114 @@ header {
   font-family: 'Roboto Mono' monospace;
   font-size: 16px;
 }
+
+.btn-edit, .btn-cancel {
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: 'Roboto Mono', monospace;
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background-color: #E03616;
+  color: #e8dad3;
+}
+
+.btn-cancel {
+  background-color: #333;
+  color: #e8dad3;
+}
+
+.my-bookings-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.booking-cta {
+  font-family: 'Pirata One';
+  font-size: 40px;
+  text-align: center;
+  color: #e03616;
+  margin-top: 40px;
+}
+
+/* Delete confirmation page */
+.delete-container {
+  max-width: 500px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #111111;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.delete-title {
+  font-family: 'Pirata One';
+  font-size: 40px;
+  color: #e03616;
+  margin-bottom: 20px;
+}
+
+.delete-text {
+  font-family: 'Roboto Mono', monospace;
+  color: #e8dad3;
+  margin-bottom: 40px;
+  line-height: 1.6rem;
+}
+
+.btn-delete-confirm {
+  background-color: #e03616;
+  color: #e8dad3;
+  padding: 12px 40px;
+  border-radius: 25px;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.btn-delete-confirm:hover {
+  opacity: 0.9;
+}
+
+.btn-delete-back {
+  display: inline-block;
+  margin-top: 10px;
+  color: #e8dad3;
+  text-decoration: none;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.btn-delete-back:hover {
+  text-decoration: underline;
+}
+
+/* Back button (Edit & Delete pages) */
+.btn-back {
+  background-color: #E03616;
+  color: #e8dad3;
+  padding: 12px 40px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: block;
+  margin: 30px auto;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.btn-back:hover {
+  opacity: 0.9;
+}
+
 
 /* Menu styling */
 .menu-tabs {
