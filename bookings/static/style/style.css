@@ -1,0 +1,465 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* General styles */
+body {
+  background-color: #1F1E1F;
+  font-family: 'Roboto Mono', monospace;
+  background-image: radial-gradient(#151415 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+  background-attachment: fixed;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(to bottom, rgba(31, 30, 31, 0.85), rgba(31, 30, 31, 0));
+  backdrop-filter: blur(0.8px);
+  -webkit-backdrop-filter: blur(0.8px);
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(to bottom, rgba(31, 30, 31, 0.85), rgba(31, 30, 31, 0));
+  backdrop-filter: blur(0.8px);
+  -webkit-backdrop-filter: blur(0.8px);
+}
+
+/* Hero and navigation styles */
+.hero {
+  position: relative;
+  height: 60vh;
+  background: url('{% static "images/landing-image.jpg" %}') no-repeat center center/cover;
+}
+
+.hero-text {
+  position: absolute;
+  color: #e8dad3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  color: #e03616;
+}
+
+.hero-text h1 {
+  font-family: 'UnifrakturMaguntia';
+  font-size: 3rem;
+  color: #e8dad3;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.navbar {
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  font-family: 'UnifrakturMaguntia';
+  font-size: 3rem;
+  color: #e8dad3;
+  text-decoration: none;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #e8dad3;
+}
+
+.navbar .nav-links a {
+  margin-left: 20px;
+  color: #e8dad3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hamburger icon (hidden on desktop) */
+.menu-toggle {
+  font-size: 2rem;
+  color: #e8dad3;
+  cursor: pointer;
+  display: none;
+}
+
+/* Side panel */
+.side-panel {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background: #111;
+  padding-top: 2rem;
+  transition: left 0.3s ease;
+  z-index: 1001;
+}
+
+.side-panel a {
+  display: block;
+  padding: 1rem;
+  color: #e8dad3;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
+}
+
+.side-panel a:hover {
+  background: #333;
+}
+
+.close-btn {
+  font-size: 2rem;
+  color: #e8dad3;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: block;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+/* Introduction section */
+.intro {
+  color: #e8dad3;
+  padding-left: 30px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 100px;
+  margin-top: 30px;
+  line-height: 1.2rem;
+  letter-spacing: 0.15em;
+  max-width: 95vw;
+}
+
+.intro p {
+  font-family: 'Roboto';
+  font-weight: 300;
+}
+
+.btn {
+  text-decoration: none;
+  color: #e8dad3;
+  background-color: #E03616;
+  padding: 10px 45px 10px 45px;
+  border-radius: 25px;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+/* Booking form styles */
+.booking-section {
+  text-align: center;
+  padding: 60px 15px;
+  margin-bottom: 50px;
+}
+
+.booking-section h2 {
+  color: #e03616;
+  margin-bottom: 60px;
+}
+
+.booking-cta {
+  font-family: 'Pirata One';
+  font-size: 40px;
+}
+
+.booking-form {
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.booking-form label {
+  font-size: 16px;
+  text-align: center;
+  color: #e8dad3;
+}
+
+#name {
+  color: #1F1E1F;
+}
+
+.booking-form select,
+.booking-form input {
+  padding: 12px;
+  background-color: #e8dad3;
+  color: #1F1E1F;
+  border-style: none;
+  border-radius: 25px;
+}
+
+.booking-form .btn {
+  border: none;
+  padding-top: 15px;
+  font-family: 'Roboto Mono' monospace;
+  font-size: 16px;
+}
+
+/* Menu styling */
+.menu-tabs {
+  margin-top: 60px;
+  text-align: center;
+  gap: 10px;
+}
+
+.menu-tabs .tab-link {
+  color: #e8dad3;
+  font-size: 1.3rem;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.menu-tabs .tab-link.active {
+  color: #e03616;
+  border-color: #e03616;
+}
+
+.menu-navigation {
+  display: flex;
+  flex-direction: column;
+}
+
+#menu-search {
+  padding: 8px 10px 8px 10px;
+  border-radius: 25px;
+  border-style: none;
+  border: 2px solid #e8dad3;
+  background-color: #1F1E1F;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+input[type="text"] {
+  color: #e8dad3;
+}
+
+h4 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 18px;
+  color: #e03616;
+}
+
+.menu-section {
+  color: #e8dad3;
+  padding-bottom: 100px;
+  z-index: 100;
+}
+
+.menu-heading {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 30px;
+}
+
+.menu-heading h2 {
+  margin-top: 60px;
+}
+
+.menu-section h2 {
+  color: #e03616;
+  font-family: 'Pirata One';
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #E03616;
+  padding: 1rem 0;
+}
+
+.menu-item h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.menu-item p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.item-price {
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+  padding-left: 2rem;
+}
+
+.drinks-heading {
+  padding-left: 30px;
+  padding-bottom: 15px;
+  padding-top: 30px;
+  color: #e03616;
+  font-size: 1.3rem;
+}
+
+/* Footer styling */
+footer {
+  padding-top: 80px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 80px;
+  background-color: #111111;
+  color: #e8dad3;
+  text-align: center;
+}
+
+footer {
+  background-image: radial-gradient(#1f1e1f 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
+footer p {
+  margin-top: 30px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+}
+
+footer h4 {
+  font-family: 'Pirata One';
+  font-size: 2rem;
+}
+
+/* Media queries for responsiveness */
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .side-panel,
+  .overlay {
+    display: none;
+  }
+
+  .nav-links a {
+    color: #e8dad3;
+    background-color: #e03616;
+    padding: 10px 45px 10px 45px;
+    border-radius: 25px;
+  }
+  
+  .intro p {
+    width: 80%;
+    line-height: 1.7rem;
+    font-size: 1.3rem;
+  }
+
+  .intro {
+    padding-top: 50px;
+    padding-left: 125px;
+  }
+
+  .logo {
+    font-size: 4.5rem;
+  }
+
+  .btn {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 50px;
+  }
+
+  form {
+    /* border: 3px solid #E03616; */
+    padding: 60px;
+    border-radius: 60px;
+    background-color: #111111;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .intro p {
+    width: 60%;
+    line-height: 1.8rem;
+    font-size: 1.5rem;
+  }
+
+  .intro {
+    padding-top: 100px;
+    padding-left: 250px;
+  }
+
+  .logo {
+    font-size: 5rem;
+  }
+
+  .btn {
+    font-size: 2rem;
+    padding: 2rem;
+    border-radius: 50px;
+  }
+
+  form button {
+    font-size: 2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 5rem;
+    max-width: 500px;
+  }
+
+  .menu-section {
+    width: 50%;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .booking-section {
+    width: 100%;
+  }
+
+}
