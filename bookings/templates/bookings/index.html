@@ -18,13 +18,13 @@
     <header>
       <nav class="navbar">
         <div class="logo">
-          <a href="index.html">casa fuego</a>
+          <a href="{% url 'index' %}">casa fuego</a>
         </div>
   
         <!-- Desktop Links -->
         <div class="nav-links">
-          <a href="menu.html">Menu</a>
-          <a href="booking.html">Book</a>
+          <a href="{% url 'menu' %}">Menu</a>
+          <a href="{% url 'booking' %}">Book</a>
         </div>
   
         <!-- Hamburger icon -->
@@ -35,8 +35,8 @@
     <!-- Nav menu for mobile -->
     <div class="side-panel">
       <span class="closedjan-btn">&times;</span>
-      <a href="menu.html">Menu</a>
-      <a href="booking.html">Book</a>
+      <a href="{% url 'menu' %}">Menu</a>
+      <a href="{% url 'booking' %}">Book</a>
     </div>
 
     <!-- Overlay -->
