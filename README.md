@@ -1,3 +1,10 @@
+## Assessor Update
+
+Security improvements were implemented following feedback:
+- SECRET_KEY moved to environment variables
+- Repository history cleaned to remove sensitive data
+- Deployment configuration updated
+
 # **Casa Fuego - Restauartant Booking System**
 
 A full-stack Django web application that allows customers to browse the restaurant menu, create an account, and make online table bookings. Users can view, edit, and cancel their bookings through a secure account dashboard. The site owner can accept online reservations while preventing double-bookings and maintaining reliable reservation data.
@@ -311,24 +318,23 @@ Authentication behaves correctly in all scenarios.
 
 ### **Steps Taken**
 
-1. Created GitHub repo  
-2. Connected repo to Render  
-3. Added environment variables:  
-   ```
-   PYTHON_VERSION = 3.12.1
-   DEBUG = False
-   ```
-4. Build Command:
-   ```
+1. Create a new Web Service on Render.
+2. Connect the GitHub repository.
+3. Set environment variables:
+   - SECRET_KEY
+   - DEBUG
+   - DATABASE_URL
+   - ALLOWED_HOSTS
+4. Add a `runtime.txt` specifying Python version.
+5. Configure build command:
+
    pip3 install -r requirements.txt && python manage.py collectstatic --noinput
-   ```
-5. Start Command:
-   ```
-   gunicorn casa_fuego.wsgi
-   ```
-6. Added Render URL to ALLOWED_HOSTS  
-7. Deployed successfully  
-8. Static files handled by Whitenoise  
+
+6. Configure start command:
+
+   gunicorn casa_fuego.wsgi:application
+
+7. Deploy and verify the live application matches the development version.
 
 ---
 
@@ -343,11 +349,23 @@ Authentication behaves correctly in all scenarios.
 - StackOverflow for debugging  
 - Code Institute resources
 
-# **10. Security**
-- DEBUG disabled in production  
-- Secret key stored in environment variables  
-- Authentication required for booking management  
-- Form validation on all fields  
+# **10. Security and Environment Variables**
+During development, sensitive configuration values such as `SECRET_KEY`, `DEBUG`, and `DATABASE_URL` were moved to environment variables to ensure application security.
+
+The following changes were implemented:
+
+- The Django `SECRET_KEY` is now stored in environment variables instead of being hardcoded.
+- `DEBUG` mode is controlled using environment variables to ensure it is disabled in production.
+- A `.env` file is used locally for development, and is excluded from version control via `.gitignore`.
+- Environment variables are configured securely within the Render deployment dashboard.
+
+Example settings configuration:
+
+SECRET_KEY=os.environ.get("SECRET_KEY")
+DEBUG=os.environ.get("DEBUG", "False")=="True
+
+
+This ensures that no sensitive data is exposed in the public repository or deployed application.
 
 ---
 
